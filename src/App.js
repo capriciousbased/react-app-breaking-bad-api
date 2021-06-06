@@ -21,12 +21,12 @@ function App() {
       setIsLoading(false);
     };
     fetchItems();
-  }, []);
+  }, [query]);
 
   return (
     <div className="Container">
       <Header />
-      <Search />
+      <Search getQuery={(q)=> setQuery(q)}/>
       <CharacterGrid isLoading={isLoading} items={items} />
     </div>
   );
